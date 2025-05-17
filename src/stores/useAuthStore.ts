@@ -9,7 +9,7 @@ interface AuthState {
 
     // Ações
     setSession: (session: Session | null) => void;
-    setuser: (user: User | null) => void;
+    setUser: (user: User | null) => void;
     setLoading: (loading: boolean) => void;
     signIn: (email: string, password: string) => Promise<{ error: any}>;
     signUp: (email: string, password: string) => Promise<{ error: any}>;
@@ -25,7 +25,7 @@ const useAuthStore = create<AuthState>((set, get) => ({
     loading: true,
 
     setSession: (session) => set({ session }),
-    setuser: (user) => set({ user }),
+    setUser: (user) => set({ user }),
     setLoading: (loading) => set({ loading }),
 
     signIn: async (email, password) => {
